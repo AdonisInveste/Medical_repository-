@@ -1,0 +1,77 @@
+<html>
+	   	<head>
+	   	
+	   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+
+ 		{% block head %}
+ 		   		{% endblock %}
+ 		   		
+	</head>
+	
+	<body>
+	
+	<style>
+		
+		ul, li {
+			
+			margin: 0px 14px;
+		}
+		
+		</style>
+		
+	<nav class="navbar fixed-top navbar-light bg-light justify-content-between flex-nowrap flex-row">
+	
+ 
+  
+<div class  = " container">
+
+ <a class = "navbar-brand float-left" href = "{% url 'Identities:iivri'%}">Medicine platform</a>
+ 
+
+ 
+  {% if user.is_authenticated %}
+  
+	<ul class = "nav navbar-nav flex-row float-left ">
+	
+		 <li class="nav-item"> <a class="nav-link" href = "{% url 'home:home'%}">  {{ user.first_name }}'s profile</a></li>
+		 
+		
+		<li class = "nav-item "><a class = "nav-link" href = "{% url 'Identities:logout'%}">Sign Out</a></li>
+		
+		
+		
+	
+		
+<!--
+		<li class = "nav-item "><a class = "nav-link" href = "{% url 'Identities:change_password'%}">Change Password</a></li>
+		
+		<li class="nav-item"><a class = "nav-link"href = "{% url 'Identities:reset_password' %}"  >Reset Password</a></li>	
+-->
+		
+	</ul>
+	
+	{% else %}
+	<ul class = "nav navbar-nav flex-row float-left ">
+	
+		<li class = "nav-item "><a class="nav-link" href = "{% url 'Identities:login'%}">Sign In</a></li>
+		
+		<li class = "nav-item "><a class = "nav-link" href = "{% url 'Identities:register'%}">Create Account</a></li>
+	
+		
+	</ul>
+	
+  	{% endif %}
+	
+</div>
+  
+
+</nav>
+	
+   		{% block body %}
+   		
+	   		{% endblock %}
+		
+	</body>
+	
+</html>

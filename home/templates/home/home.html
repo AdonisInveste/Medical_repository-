@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+
+<html>
+   
+    <head>
+     
+       {% block head %}
+       
+    <title>WHO is your patient?</title>
+    
+    {% endblock %}
+    
+	</head>
+	
+	<body>
+	
+	
+
+	
+	
+	
+{% block body %}
+
+
+
+<div class = "container" style = "margin: 80px;">
+
+<form method = 'post'>
+
+{% csrf_token %}
+
+<p>Create Patient</p>
+
+   {{ form.as_p }}
+
+
+<button class = "btn-primary btn-large btn ">Submit</button>
+	
+
+	</form>
+	
+<!--				<h1> {{ Content }}</h1>-->
+	
+			<div class = "row">
+			
+				<div class = "col-sm-7">
+				
+	{% for Identity in Identities %}
+			
+	
+			<div class = "card" style = "margin: 40px;">
+			
+			
+
+				
+					<div class = "card-header">
+					 			<h6> Creator : {{ user.first_name }} {{ user.last_name }}</h6>
+					</div>
+
+				<div class = "card-body">
+
+						<div class = "card-title">
+						 <h6>NIS : {{ Identity.NIS }}</h6>
+						</div>
+
+			  		<small class = "card-text">Created On : {{ Identity.Timestamp }}</small>
+
+			</div>
+		
+	
+</div>
+			{% endfor %}
+			
+				</div>	
+		</div>
+</div>
+
+{% endblock %}
+
+	</body>
+	
+</html>

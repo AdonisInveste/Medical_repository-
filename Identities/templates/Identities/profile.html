@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+<html>
+   
+    <head>
+     
+       {% block head %}
+    <title>profile</title>
+    {% endblock %}
+    
+	</head>
+	
+	<body>
+	
+	
+	
+	
+	
+{% block body %}
+
+	<style>
+		
+		div {
+		font-family: Optima, Heiti SC;
+		}
+		
+		</style>
+
+<div class="container">
+
+	<h1>{{ user }}</h1>	
+
+	<p>First Name : {{ user.first_name }}</p>	
+				
+<p>	Last Name : {{ user.last_name }}</p>
+
+<p>Email : {{ user.email }}</p>
+
+
+</div>
+
+{% endblock %}
+
+	</body>
+	
+</html>
