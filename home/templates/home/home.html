@@ -52,17 +52,22 @@
 			<div class = "card" style = "margin: 40px;">
 			
 			
-
+<!--<p class="font-weight-bold" style = "font-family: Optima">{{ Identity.user }}</p>-->
 				
 					<div class = "card-header">
-					 			<h6> Creator : {{ user.first_name }} {{ user.last_name }}</h6>
+				 			
+		<p class="font-weight-bold"> {{Identity.First_Name}}  {{Identity.Last_Name}} </p>
 					</div>
 
 				<div class = "card-body">
-
+						
+	
+					
 						<div class = "card-title">
 						 <h6>NIS : {{ Identity.NIS }}</h6>
 						</div>
+			  		
+			  	
 
 			  		<small class = "card-text">Created On : {{ Identity.Timestamp }}</small>
 

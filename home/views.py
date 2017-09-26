@@ -10,7 +10,7 @@ class Identity_view(TemplateView):
 	
 	
 	template_name = 'home/home.html'
-	template_patient = 'home/patientprofile.html'
+
 	
 	
 	
@@ -18,7 +18,7 @@ class Identity_view(TemplateView):
 		
 		form = Identity_form()
 		
-		Identities = Identity_unique.objects.all()
+		Identities = Identity_unique.objects.filter(user=request.user)
 		var = {'form': form, 'Identities': Identities}
 		return render(request, self.template_name, var)
 	

@@ -34,7 +34,7 @@
   
 	<ul class = "nav navbar-nav flex-row float-left ">
 	
-		 <li class="nav-item"> <a class="nav-link" href = "{% url 'home:home'%}">  {{ user.first_name }}'s profile</a></li>
+		 <li class="nav-item"> <a class="nav-link font-weight-bold" style = "font-family: Optima" href = "{% url 'home:home'%}">  Creator :  {{ user.first_name}} {{ user.last_name}}</a></li>
 		 
 		
 		<li class = "nav-item "><a class = "nav-link" href = "{% url 'Identities:logout'%}">Sign Out</a></li>
@@ -46,14 +46,18 @@
 <!--
 		<li class = "nav-item "><a class = "nav-link" href = "{% url 'Identities:change_password'%}">Change Password</a></li>
 		
-		<li class="nav-item"><a class = "nav-link"href = "{% url 'Identities:reset_password' %}"  >Reset Password</a></li>	
--->
+		-->
+	
+
 		
 	</ul>
 	
 	{% else %}
 	<ul class = "nav navbar-nav flex-row float-left ">
 	
+			
+		<li class="nav-item"><a class = "nav-link"href = "{% url 'Identities:reset_password' %}" >Reset Password</a></li>
+		
 		<li class = "nav-item "><a class="nav-link" href = "{% url 'Identities:login'%}">Sign In</a></li>
 		
 		<li class = "nav-item "><a class = "nav-link" href = "{% url 'Identities:register'%}">Create Account</a></li>

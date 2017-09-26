@@ -52,4 +52,6 @@ class LoginRequiredMiddleware:
 # If the user is not logged in and has an account with the services then the user must be redirected to the login page 
 
  # if the user is coming to the page for the first time then the user must be directed to the Home page that has the value proposition.
+	
+# If the user is logged out and the user clicks on the 'brand link' the user should be navigated to the value proposition page. 
 		

@@ -14,3 +14,6 @@ class Identity_unique(models.Model):
 	
 	Timestamp = models.DateTimeField(auto_now=True)
 	
+	First_Name = models.CharField(max_length=80, null=True)
+	
+	Last_Name = models.CharField(max_length=80, null=True)

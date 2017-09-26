@@ -4,6 +4,8 @@ from home.models import Identity_unique
 class Identity_form(forms.ModelForm):
 	
 	NIS = forms.CharField()
+	First_Name = forms.CharField()
+	Last_Name = forms.CharField()
 
 	
 	
@@ -11,6 +13,6 @@ class Identity_form(forms.ModelForm):
 		
 		model = Identity_unique
 		
-		fields = ('NIS', )
+		fields = ('NIS','First_Name', 'Last_Name' )
 		
 		
